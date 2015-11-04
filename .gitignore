@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+/x64
+/test
+ldapcpp.sdf
+
+
