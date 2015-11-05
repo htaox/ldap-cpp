@@ -13,12 +13,15 @@
 #include <LDAPControlSet.h>
 #include <LDAPRebind.h>
 
-#ifdef _WIN32
+/*
+  Only define if winsock2.h has not been loaded since it defines timeval
+*/
+#if defined _WIN32 && !defined(_WINSOCK2API_)
 typedef struct timeval {
   long tv_sec;
   long tv_usec;
 } timeval;
- #endif
+#endif
 
 //TODO!!
 // * implement the Alias-Handling Option (OPT_DEREF)
